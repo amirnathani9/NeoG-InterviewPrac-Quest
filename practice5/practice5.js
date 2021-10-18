@@ -3,11 +3,12 @@
 
 
 var readlineSync = require(`readline-sync`)
+var noOfStudents = readlineSync.question("Enter number of Students ")
 var name = "";
 var highestMarks = 0;
 
-for (let i = 1; i <= 2; i++) {
-    var userName = readlineSync.question("Enter student no " + i + " name: ")
+for (let i = 0; i < noOfStudents; i++) {
+    var userName = readlineSync.question("Enter student no " + [i+1] + " name: ")
     var unitMarks = readlineSync.question("Enter your unit test marks: ")
     var priMarks = readlineSync.question("Ehter your pre final marks: ")
     var finalMarks = readlineSync.question("Enter your Final Marks: ")
