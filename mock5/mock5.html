@@ -1,0 +1,40 @@
+<!-- You have to create a profit and loss calculator, in which you will make two input sections one will take current price
+and other one will take the cost price and to show result one will click on a button and a message will be shown,
+if there is loss then you just have to show a message with loss amount and similarly for profit -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="curr-price" placeholder="Current Price">
+    <input type="number" id="cost-price" placeholder="Cost Price">
+    <button id="check-btn">Check</button>
+    <div id="output-msg"></div>
+
+    <script>
+        const currPrice =document.querySelector("#curr-price")
+        const costPrice =document.querySelector("#cost-price")
+        const btn =document.querySelector("#check-btn")
+        const msg =document.querySelector("#output-msg")
+
+        btn.addEventListener("click",()=>{
+
+            var profit = currPrice.value - costPrice.value
+            var loss = costPrice.value - currPrice.value
+
+            if(Number(currPrice.value)>Number(costPrice.value))
+                msg.innerText = `You have a profit of amount ${profit}`
+            
+            else
+                msg.innerText = `You have a loss of amount ${loss}`
+
+        })
+
+    </script>
+</body>
+</html>

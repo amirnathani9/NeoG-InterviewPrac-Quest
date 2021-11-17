@@ -1,0 +1,56 @@
+<!-- Here's an API Link: [https://mystery-api.kushanksriraj.repl.co/get](https://mystery-api.kushanksriraj.repl.co/get) 
+
+This API link can give two errors, either 404, or 401. 
+If the error is 404, show the user 'page not found' and if the error is 401, show the user 
+'you are not logged in'. 
+
+Followup question: If the status is 200 then show the message "API is working"
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+
+     <button class="btn">Fetch API</button>
+     <div class="msg"></div>
+
+    <script>
+        var btn = document.querySelector(".btn")
+        var msg = document.querySelector(".msg")
+
+        var url = "https://mystery-api.kushanksriraj.repl.co/get"
+
+        function errorHandler(error){
+            msg.innerText =  error
+        }
+
+
+        btn.addEventListener("click",()=>{
+
+            fetch(url)
+            .then(response=>{
+                console.log(response.status)
+                if(response.status === 404){
+                    throw("page not found")
+                }
+                else if(response.status === 401){
+                    throw("you are not logged in")
+                }
+                else if(response.status === 200){
+                    throw("API is working")
+                }
+            })
+            .catch(errorHandler)
+        })
+
+
+
+    </script>
+ </body>
+ </html>

@@ -10,7 +10,7 @@ var inputTxt = document.querySelector("#input-txt");
 var showBtn =document.querySelector("#show-btn");
 var message = document.querySelector("#msg")
 
-showBtn.addEventListener("click", ()=>{
+inputTxt.addEventListener("input", ()=>{
     var inptxt = inputTxt.value;
     var inptxtLower = inptxt.toLowerCase();
     if(inptxtLower === "tanvi"){

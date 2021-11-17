@@ -1,0 +1,48 @@
+<!-- Create a web app, where I input my name, and then I input a password.
+If the password contains the input name in it, show an error message "Password can't have name" -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input-txt" placeholder="name">
+    <input type="text" id="password" placeholder="password">
+    <button id="btn">Check</button>
+    <div id="msg"></div>
+
+    <script>
+        var btn = document.querySelector("#btn")
+        var inputTxt = document.querySelector("#input-txt")
+        var password = document.querySelector("#password")
+        var msg = document.querySelector("#msg")
+
+
+        btn.addEventListener("click", () => {
+
+            var pass = password.value;
+            var name = inputTxt.value
+            if(pass.includes(name)){
+                msg.innerText = "Password can't have name"
+            }
+            else{
+                msg.innerText = "Success"
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
