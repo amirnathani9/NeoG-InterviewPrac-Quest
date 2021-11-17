@@ -1,0 +1,40 @@
+<!-- Here is an API - https://jsonplaceholder.typicode.com/todos. The response show the titles of all items on the screen -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="msg"></div>
+    <script>
+        var msg = document.querySelector("#msg")
+
+        var url = `https://jsonplaceholder.typicode.com/todos`
+
+        function todosApi(){
+            fetch(url)
+            .then(response=>response.json())
+            .then(todos =>{
+                let result="";
+                msg.innerHTML = todos.map(todo=>{
+
+                    result=`<p>Title:${todo.title}</p>`
+                    return result
+                })
+                .join("")
+            })
+            
+        }
+        todosApi()
+
+
+
+
+
+    </script>
+</body>
+</html>
