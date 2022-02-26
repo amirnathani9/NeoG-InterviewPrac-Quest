@@ -8,6 +8,7 @@ function getTodos() {
     fetch(url)
         .then(response => response.json())
         .then(todos => {
+            console.log(todos)
             let result = "";
             app.innerHTML = todos.map((todo) => {
 
